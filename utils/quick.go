@@ -16,6 +16,10 @@ func StrToNum(in string) (out int) {
     return a
 }
 
-func Pop[T any](slice []T, s int) []T {
-    return append(slice[:s], slice[s+1:]...)
+func Pop[T any](slice []T, index int) ([]T) {
+	if index < 0 || index >= len(slice) {
+		return nil
+	}
+	slice = append(slice[:index], slice[index+1:]...)
+	return slice 
 }
