@@ -46,13 +46,11 @@ func rotate(matrix []string) []string {
     }
     cols := len(matrix[0])
     
-    // Create a new slice for the rotated matrix
     s := make([]string, cols)
 
-    // Iterate over each column of the original matrix
     for i := 0; i < cols; i++ {
         tmp := []string{}
-        for j := rows - 1; j >= 0; j-- { // Start from the last row for 90° rotation
+        for j := rows - 1; j >= 0; j-- {
             tmp = append(tmp, string(matrix[j][i]))
         }
         s[i] = strings.Join(tmp, "")
